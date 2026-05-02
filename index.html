@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SwingEdge 44 | USA & Canada Swing Trading Scanner</title>
+  <meta name="description" content="SwingEdge 44 is a professional swing trading scanner concept for USA and Canadian markets using fundamentals, 44 SMA pullbacks, green candles, volume confirmation, and risk/reward filters." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="background-glow"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">44</div>
+      <div>
+        <h1>SwingEdge 44</h1>
+        <p>USA + Canada professional swing scanner</p>
+      </div>
+    </div>
+    <div class="market-pill" id="marketConditionPill">Market: Neutral</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">Pullback scanner for high-quality stocks</span>
+        <h2>Find strong stocks bouncing from a rising 44-day SMA.</h2>
+        <p>
+          SwingEdge 44 ranks fundamentally strong USA and Canadian stocks using trend, 44 SMA pullback,
+          green candle confirmation, high volume, and minimum 1:2 risk/reward rules.
+        </p>
+        <div class="hero-actions">
+          <button class="primary-btn" id="runScanBtn">Run scanner</button>
+          <button class="ghost-btn" id="resetBtn">Reset filters</button>
+        </div>
+      </div>
+
+      <div class="rules-card">
+        <h3>Selection rules</h3>
+        <div class="rule-grid">
+          <span>Fundamental score above 70</span>
+          <span>44 SMA rising</span>
+          <span>Price in uptrend</span>
+          <span>Touches within 1% of SMA</span>
+          <span>Green daily candle</span>
+          <span>Close above 44 SMA</span>
+          <span>Volume above 1.3x 20-day average</span>
+          <span>Risk/reward at least 1:2</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="metric-card">
+        <p>Total scanned</p>
+        <strong id="totalScanned">200</strong>
+        <span>Top 100 USA + Top 100 Canada</span>
+      </article>
+      <article class="metric-card">
+        <p>Qualified setups</p>
+        <strong id="qualifiedCount">0</strong>
+        <span>Only clean pullback setups</span>
+      </article>
+      <article class="metric-card">
+        <p>Average fundamental score</p>
+        <strong id="averageFundamental">0</strong>
+        <span>Quality filter active</span>
+      </article>
+      <article class="metric-card">
+        <p>Best signal</p>
+        <strong id="bestSignal">-</strong>
+        <span>Ranked by quality first</span>
+      </article>
+    </section>
+
+    <section class="scanner-panel">
+      <div class="panel-header">
+        <div>
+          <h3>Ranked scanner results</h3>
+          <p>Best stocks appear first. Weak setups are automatically removed.</p>
+        </div>
+        <div class="filters">
+          <select id="marketFilter" aria-label="Market filter">
+            <option value="All">All markets</option>
+            <option value="USA">USA</option>
+            <option value="Canada">Canada</option>
+          </select>
+          <select id="signalFilter" aria-label="Signal filter">
+            <option value="All">All signals</option>
+            <option value="Buy">Buy</option>
+            <option value="Buy Watch">Buy Watch</option>
+            <option value="Hold">Hold</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Stock</th>
+              <th>Market</th>
+              <th>Price</th>
+              <th>Fund.</th>
+              <th>Tech.</th>
+              <th>44 SMA</th>
+              <th>Vol.</th>
+              <th>Signal</th>
+              <th>Levels</th>
+            </tr>
+          </thead>
+          <tbody id="resultsBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="details-grid" id="detailsGrid"></section>
+
+    <section class="disclaimer">
+      <h3>Important note</h3>
+      <p>
+        This website is built as a scanner interface and strategy dashboard. The current data is demo/sample data so the
+        design can run on GitHub Pages without paid market-data keys. Connect a real market-data API before using it for
+        live trading decisions. This is educational content, not financial advice.
+      </p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
